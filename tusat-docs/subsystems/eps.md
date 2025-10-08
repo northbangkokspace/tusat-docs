@@ -1,15 +1,70 @@
-# EPS Board Command Protocol – Guide
+# Electrical Power Subsystem
 
 ## What is This?
 
-This **EPS (Electrical Power System)** board is designed to manage solar power for a system. It connects **solar panels**, **sensors**, a **battery**, and **output channels** – all monitored and controlled using a simple communication protocol based on **KISS (Keep It Simple, Stupid)**.
+This **EPS (Electrical Power System)** board is designed to manage solar power for a system. It connects **solar panels**, **sensors**, a **battery**, and **output channels** – all monitored and controlled using a simple communication protocol based on **KISS (Keep It Simple, Stupid)** Protocol.
+
+## Pinout Diagram
+![Block Diagram](eps-diagram.svg)
+
+## Features
+- 6 Solar Cell input
+- 2 channels power output (3 Outputs per channel)
+- EMI Protection
+- CAN, UART Comunication protocol
+- PC104 form factor compatible
+- Heater with automatic control (optional)
+- 1S2P Lithium-ion cell
+
+## Electrical Characteristics
+| Description               | Conditions                   | Min  | Typical | Max  | Unit |
+|:-------------------------:|:----------------------------:|:----:|:-------:|:----:|:----:|
+|                           | MPPT Input                   |      |         |      |      |
+| Input Voltage             |                              | 4.8  |   -     | 18   | V    |
+| Output Voltage            |                              |  -   | 4.1     |  -   | V    |
+| Output Power              |                              |  -   | 25      |  -   | W    |
+| Total Energy              |                              |  -   | 25      |  -   | Wh   |
+|                           | Battery Pack                 |      |         |      |      |
+| Output Voltage            |                              | 3    | 3.6     | 4.2  | V    |
+| Output Power              |                              |  -   | 25      |   -  | W    |
+|                           | 5V Output Power (per channel)|      |         |      |      |
+| Output Voltage            |                              |  -   | 5.0     |  -   | V    |
+| Output Power              |                              |  -   | 25      |  -   | W    |
+| Operating Temperature     |                              | -20  |    -    | +60  | ⁰C   |
+| Storage Temperature       |                              | -20  |    -    | +60  | ⁰C   |
+<!-- ![alt text](image.png) -->
+
+
+<!-- ## NB-EPS100 Specification
+## Battery Cell Ratings
+- Norminal voltage 3.6V
+- Allowable maxx charging voltage 4.2V
+## System protection ratings -->
+
+<!-- - 20W per converter per 3 channel
+- 2 converter (input at mppt)
+- 6 out / 6 in
+- 2p 18650
+- 4.1 x 3080 x 2 = 25.256Wh
+- Max Charge 4.1V
+- Over Voltage 4.2
+- Under Voltage 3.05
+- ~~Automatic balance~~
+- Heater (optional) -->
+
+
+
+
+
+
+## EPS Board Command Protocol – Guide
 
 You send commands and receive data using specific formats (frames), and these commands let you:
 
 * Read voltages and currents from solar panels and battery
 * Monitor output channels
 * Turn outputs ON or OFF
-<!-- * Measure battery temperature -->
+* Measure battery temperature
 
 ---
 
@@ -74,5 +129,3 @@ Every command you send follows this pattern:
 * Always double-check **channel numbers** when sending commands
 * You can use a **serial terminal** or script to send frames
 
-## Block diagram
-![Block Diagram](eps-diagram.svg)
