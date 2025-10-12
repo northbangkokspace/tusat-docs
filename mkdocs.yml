@@ -1,10 +1,10 @@
 site_name: TUSat Docs
 docs_dir: tusat-docs
 nav:
-  - Home: index.md
+  # - Home: index.md
   - EPS: eps/eps.md
-  - OBC + Commu: obc-commu/obc-commu.md
-  - ADCS : adcs/adcs.md
+  # - OBC + Commu: obc-commu/obc-commu.md
+  # - ADCS : adcs/adcs.md
   - Documents: document.md
 markdown_extensions:
   - attr_list
