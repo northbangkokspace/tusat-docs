@@ -6,8 +6,10 @@
       
       
       
+        <link rel="prev" href="../..">
       
-        <link rel="next" href="../../document/">
+      
+        <link rel="next" href="../obc-commu/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -77,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#eps-board-command-protocol-guide" class="md-skip">
+        <a href="#electrical-power-subsystem" class="md-skip">
           Skip to content
         </a>
       
@@ -192,6 +194,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -254,6 +278,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pinout-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinout Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electrical-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electrical Characteristics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eps-board-command-protocol-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPS Board Command Protocol – Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#system-overview" class="md-nav__link">
     <span class="md-ellipsis">
       System Overview
@@ -298,19 +358,54 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      Block diagram
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../obc-commu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OBC + Commu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADCS
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -327,7 +422,7 @@
   
   
   <span class="md-ellipsis">
-    Documents
+    Documents and Files
     
   </span>
   
@@ -373,6 +468,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pinout-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinout Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electrical-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electrical Characteristics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eps-board-command-protocol-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPS Board Command Protocol – Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#system-overview" class="md-nav__link">
     <span class="md-ellipsis">
       System Overview
@@ -417,15 +548,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      Block diagram
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -442,17 +564,167 @@
 
 
 
-<h1 id="eps-board-command-protocol-guide">EPS Board Command Protocol – Guide</h1>
+<h1 id="electrical-power-subsystem">Electrical Power Subsystem</h1>
 <h2 id="what-is-this">What is This?</h2>
-<p>This <strong>EPS (Electrical Power System)</strong> board is designed to manage solar power for a system. It connects <strong>solar panels</strong>, <strong>sensors</strong>, a <strong>battery</strong>, and <strong>output channels</strong> – all monitored and controlled using a simple communication protocol based on <strong>KISS (Keep It Simple, Stupid)</strong>.</p>
+<p>This <strong>EPS (Electrical Power System)</strong> board is designed to manage solar power for a system. It connects <strong>solar panels</strong>, <strong>sensors</strong>, a <strong>battery</strong>, and <strong>output channels</strong> – all monitored and controlled using a simple communication protocol based on <strong>KISS (Keep It Simple, Stupid)</strong> Protocol.</p>
+<h2 id="pinout-diagram">Pinout Diagram</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../eps-diagram.svg" data-desc-position="bottom"><img alt="Block Diagram" src="../eps-diagram.svg"></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>6 Solar Cell input</li>
+<li>2 channels power output (3 Outputs per channel)</li>
+<li>EMI Protection</li>
+<li>CAN, UART Comunication protocol</li>
+<li>PC104 form factor compatible</li>
+<li>Heater with automatic control (optional)</li>
+<li>1S2P Lithium-ion cell</li>
+</ul>
+<h2 id="electrical-characteristics">Electrical Characteristics</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Conditions</th>
+<th style="text-align: center;">Min</th>
+<th style="text-align: center;">Typical</th>
+<th style="text-align: center;">Max</th>
+<th style="text-align: center;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">MPPT Input</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Input Voltage</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4.8</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Voltage</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">4.1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Power</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">W</td>
+</tr>
+<tr>
+<td style="text-align: center;">Total Energy</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Wh</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Battery Pack</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Voltage</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3.6</td>
+<td style="text-align: center;">4.2</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Power</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">W</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5V Output Power (per channel)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Voltage</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">5.0</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr>
+<td style="text-align: center;">Output Power</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">W</td>
+</tr>
+<tr>
+<td style="text-align: center;">Operating Temperature</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-20</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+60</td>
+<td style="text-align: center;">⁰C</td>
+</tr>
+<tr>
+<td style="text-align: center;">Storage Temperature</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-20</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">+60</td>
+<td style="text-align: center;">⁰C</td>
+</tr>
+</tbody>
+</table>
+<!-- ![alt text](image.png) -->
+
+<!-- ## NB-EPS100 Specification
+## Battery Cell Ratings
+- Norminal voltage 3.6V
+- Allowable maxx charging voltage 4.2V
+## System protection ratings -->
+
+<!-- - 20W per converter per 3 channel
+- 2 converter (input at mppt)
+- 6 out / 6 in
+- 2p 18650
+- 4.1 x 3080 x 2 = 25.256Wh
+- Max Charge 4.1V
+- Over Voltage 4.2
+- Under Voltage 3.05
+- ~~Automatic balance~~
+- Heater (optional) -->
+
+<h2 id="eps-board-command-protocol-guide">EPS Board Command Protocol – Guide</h2>
 <p>You send commands and receive data using specific formats (frames), and these commands let you:</p>
 <ul>
 <li>Read voltages and currents from solar panels and battery</li>
 <li>Monitor output channels</li>
 <li>Turn outputs ON or OFF</li>
+<li>Measure battery temperature</li>
 </ul>
-<!-- * Measure battery temperature -->
-
 <hr>
 <h2 id="system-overview">System Overview</h2>
 <table>
@@ -618,8 +890,6 @@
 <li>Always double-check <strong>channel numbers</strong> when sending commands</li>
 <li>You can use a <strong>serial terminal</strong> or script to send frames</li>
 </ul>
-<h2 id="block-diagram">Block diagram</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../eps-diagram.svg" data-desc-position="bottom"><img alt="Block Diagram" src="../eps-diagram.svg"></a></p>
 
 
 
