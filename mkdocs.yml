@@ -5,7 +5,7 @@ nav:
   - EPS: subsystems/eps.md
   - OBC + Commu: subsystems/obc-commu.md
   - ADCS : subsystems/adcs.md
-  - Documents: document.md
+  - Documents and Files: document.md
 markdown_extensions:
   - attr_list
   - md_in_html
