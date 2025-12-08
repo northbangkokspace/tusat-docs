@@ -19,7 +19,7 @@ The list below provides the required libraries along with a brief explanation of
 > These library can be installed from the Arduino IDE's library manager
 
 <figure align="center">
-  <img src="/images/image.png" alt="sdfat">
+  <img src="../images/image.png" alt="sdfat">
   <figcaption><a href="https://github.com/adafruit/SdFat">SdFat - Adafruit Fork</a></figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ It is more efficient and stable than the default SD library, especially when wor
 This project uses SdFat to store sensor data and system logs on the SD card.
 
 <figure align="center">
-  <img src="/images/image-1.png" alt="sdfat">
+  <img src="../images/image-1.png" alt="sdfat">
   <figcaption><a href="https://github.com/jgromes/RadioLib">RadioLib</a></figcaption>
 </figure>
 RadioLib is a versatile radio communication library that supports a wide range of wireless modules, including LoRa, FSK, and other RF transceivers.
@@ -36,7 +36,7 @@ It handles packet encoding, modulation settings, and radio control, making it ea
 This project uses RadioLib to manage communication with the LoRa module.
 
 <figure align="center">
-  <img src="/images/image-2.png" alt="sdfat">
+  <img src="../images/image-2.png" alt="sdfat">
   <figcaption><a href="https://github.com/Seeed-Studio/Grove_High_Precision_RTC_PCF85063TP">Grove - High Precision RTC</a></figcaption>
 </figure>
 Grove High Precision RTC (PCF85063TP) is a real-time clock library used to keep accurate time even when the microcontroller is powered off.
