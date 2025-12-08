@@ -6,8 +6,10 @@
       
       
       
-        <link rel="prev" href="../example-codes/">
+        <link rel="prev" href="../subsystems/adcs/">
       
+      
+        <link rel="next" href="../document/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -15,7 +17,7 @@
     
     
       
-        <title>Documents and Files - TUSat Docs</title>
+        <title>Example Codes - TUSat Docs</title>
       
     
     
@@ -76,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#obc-adcs-and-ground-station-arduino-code-example" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documents and Files
+              Example Codes
             
           </span>
         </div>
@@ -275,10 +282,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../example-codes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Example Codes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -289,6 +318,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-library-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Library used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Codes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obc-on-board-computer-example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      OBC : On-board Computer Example Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adcs-attitude-control-and-determination-example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADCS : Attitude control and determination Example Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground Station
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -297,17 +406,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../document/" class="md-nav__link">
         
   
   
@@ -318,7 +420,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -340,6 +441,76 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-library-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Library used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Codes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obc-on-board-computer-example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      OBC : On-board Computer Example Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adcs-attitude-control-and-determination-example-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADCS : Attitude control and determination Example Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground Station
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -355,13 +526,70 @@
 
 
 
-  <h1>Documents and Files</h1>
+<h1 id="obc-adcs-and-ground-station-arduino-code-example">OBC, ADCS and Ground Station Arduino Code Example</h1>
+<h2 id="software-used">Software Used</h2>
+<!-- <figure align="center" style="display : flex; flex-direction: row;justify-content: space-evenly; align-items: center; ">
+    <img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBR1mpxxSHRjAeQKNY.14SpGglSw9Q_T17Vj6iz5SLNOCf__D3E7g2HXS_dGjwUnSQiy8CMy2I7RwP_CyVWBj74g-&format=source" alt="arduino-ide">
+    <img src="https://framerusercontent.com/images/nga8AjlWVtdS8EfppGaOXtfk6X0.png?scale-down-to=512&width=1205&height=213" alt="arduino-ide" ><img>
+    <img src="https://www.st.com/bin/ecommerce/api/image.PF265487.en.feature-description-include-personalized-no-cpn-large.jpg" ><img>
+</figure> -->
 
-<p>Block diagram documents can be downloaded <a href="../TUSat%20Block%20Diagram.pdf">here</a><br>
-Assembly Procedure documents can be downloaded from <a href="../TU_Sat_Assembly-Procedure.docx">here</a><br>
-Structural Analysis can be downloaded <a href="../KTR%20Structural%20Analysis%281.5U%29.docx">here</a><br>
-Structure Design File can be downloaded <a href="../TU-Sat%20Sim.step">here</a><br>
-Subsystem Tests image can be found <a href="https://drive.google.com/drive/folders/1vS2rQoHUuQP6zxkLRVOEXOmQFG0e9m5K?usp=drive_link">here</a></p>
+<ul>
+<li><a href="https://www.arduino.cc/en/software/">Arduino IDE</a> : Tested on version <strong>2.3.6</strong></li>
+<li><a href="https://github.com/Serial-Studio/Serial-Studio/releases/tag/v3.1.3">Serial Studio</a> : Recommend version <strong>3.1.3</strong> and older (still free to use)</li>
+<li><a href="https://www.st.com/en/development-tools/stm32cubeprog.html">STM32 CubeProgrammer</a></li>
+<li><a href="https://github.com/stm32duino/Arduino_Core_STM32/wiki">STM32 Arduino Core</a></li>
+</ul>
+<h2 id="arduino-library-used">Arduino Library used</h2>
+<p>This repository contains example Arduino sketches designed to demonstrate how to use various hardware modules together, including SD storage, radio communication, and real-time clock functionality.
+To ensure the examples compile and run correctly on your board, you must install several external libraries.
+The list below provides the required libraries along with a brief explanation of what each one does and why it is needed for the example projects.</p>
+<blockquote>
+<p>These library can be installed from the Arduino IDE's library manager</p>
+</blockquote>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/image.png" data-desc-position="bottom"><img src="/images/image.png" alt="sdfat"></a>
+  <figcaption><a href="https://github.com/adafruit/SdFat">SdFat - Adafruit Fork</a></figcaption>
+</figure>
+
+<p>SdFat is an advanced SD card file system library that provides fast and reliable read/write access to SD cards using SPI.
+It is more efficient and stable than the default SD library, especially when working with large files or continuous data logging.
+This project uses SdFat to store sensor data and system logs on the SD card.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/image-1.png" data-desc-position="bottom"><img src="/images/image-1.png" alt="sdfat"></a>
+  <figcaption><a href="https://github.com/jgromes/RadioLib">RadioLib</a></figcaption>
+</figure>
+<p>RadioLib is a versatile radio communication library that supports a wide range of wireless modules, including LoRa, FSK, and other RF transceivers.
+It handles packet encoding, modulation settings, and radio control, making it easy to implement long-range or low-power wireless communication.
+This project uses RadioLib to manage communication with the LoRa module.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/image-2.png" data-desc-position="bottom"><img src="/images/image-2.png" alt="sdfat"></a>
+  <figcaption><a href="https://github.com/Seeed-Studio/Grove_High_Precision_RTC_PCF85063TP">Grove - High Precision RTC</a></figcaption>
+</figure>
+<p>Grove High Precision RTC (PCF85063TP) is a real-time clock library used to keep accurate time even when the microcontroller is powered off.
+It provides timestamping for files, logs, and events, ensuring the system always maintains correct date and time information.
+This project uses the RTC to timestamp sensor readings and system activity.</p>
+<h2 id="example-codes">Example Codes</h2>
+<h3 id="obc-on-board-computer-example-codes">OBC : On-board Computer Example Codes</h3>
+<ul>
+<li><a href="../OBC/OBC_SD_Card/OBC_SD_Card.ino">SD Card Example</a></li>
+<li><a href="../OBC/OBC_I2C_Scan/OBC_I2C_Scan.ino">I2C Scan Example</a></li>
+<li><a href="../OBC/OBC_Flash/OBC_Flash.ino">SPI Flash Example</a></li>
+<li><a href="../OBC/OBC_Poll_EPS/OBC_Poll_EPS.ino">OBC EPS Example</a></li>
+<li><a href="../OBC/OBC_RTC/OBC_RTC.ino">Realtime Clock Example</a></li>
+<li><a href="../OBC/OBC_Radio_Transmit_Receive/OBC_Radio_Transmit_Receive.ino">Communication Example</a></li>
+<li><a href="../OBC/OBC_Temperature/OBC_Temperature.ino">Temperature Sensor Example</a></li>
+</ul>
+<h3 id="adcs-attitude-control-and-determination-example-codes">ADCS : Attitude control and determination Example Codes</h3>
+<ul>
+<li><a href="../ADCS/ADCS_I2C_Scan/ADCS_I2C_Scan.ino">I2C Scan Example</a></li>
+<li><a href="../ADCS/ADCS_Flash/ADCS_Flash.ino">SPI Flash Example</a></li>
+<li><a href="../ADCS/ADCS_MTQ/ADCS_MTQ.ino">MTQ Control Example</a></li>
+</ul>
+<h3 id="ground-station">Ground Station</h3>
+<ul>
+<li><a href="../GS/GS_TX_RX/GS_TX_RX.ino">Ground Station Communication Example</a></li>
+</ul>
 
 
 
