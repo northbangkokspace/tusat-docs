@@ -50,15 +50,17 @@ void setup() {
   Serial.println(jedec_id, HEX);
 }
 
+
 void loop() {
+  int size = 256;
   // flash.eraseSector(0);
-  for (int i = 0; i < 256; i++) {
-    data[i] = i;
+  for (int i = 0; i < size; i++) {
+    data[i] = random(0,255);
   }
   flash.writeSector(0, data);
   uint8_t tmp[4096];
   flash.readSector(0, tmp);
-  for (int i = 0; i < (512 / 16); i++){
+  for (int i = 0; i < (size / 16); i++){
     for (int j = 0; j < 16; j++){
       Serial.print(tmp[(i * 16) + j],HEX);
       Serial.print(" ");
