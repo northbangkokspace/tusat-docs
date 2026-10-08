@@ -5,14 +5,23 @@ nav:
   - EPS: subsystems/eps.md
   - OBC + Commu: subsystems/obc-commu.md
   - ADCS : subsystems/adcs.md
+  - Payload: subsystems/payload.md
+  - Ground Station: subsystems/ground-station.md
   - Example Codes: example-codes.md
   - Documents and Files: document.md
 markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - glightbox
+  - drawio-exporter
+  - search
 theme:
   name: material
   palette:
