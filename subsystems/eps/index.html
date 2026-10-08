@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#electrical-power-subsystem" class="md-skip">
+        <a href="#electrical-power-system-eps" class="md-skip">
           Skip to content
         </a>
       
@@ -152,6 +152,46 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
     
     
   </nav>
@@ -269,92 +309,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-this" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      What is This?
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pinout-diagram" class="md-nav__link">
+  <a href="#duty-in-the-cubesat" class="md-nav__link">
     <span class="md-ellipsis">
-      Pinout Diagram
+      Duty in the CubeSat
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#sensors-and-actuators" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Sensors and Actuators
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electrical-characteristics" class="md-nav__link">
+  <a href="#communication-method" class="md-nav__link">
     <span class="md-ellipsis">
-      Electrical Characteristics
+      Communication Method
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#eps-board-command-protocol-guide" class="md-nav__link">
+  <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      EPS Board Command Protocol – Guide
+      Architecture Diagram
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-pinout-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Pinout Diagram
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#communication-frame-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Communication Frame Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tips
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -401,6 +411,50 @@
   
   <span class="md-ellipsis">
     ADCS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Payload
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ground-station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ground Station
     
   </span>
   
@@ -481,92 +535,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-this" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      What is This?
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pinout-diagram" class="md-nav__link">
+  <a href="#duty-in-the-cubesat" class="md-nav__link">
     <span class="md-ellipsis">
-      Pinout Diagram
+      Duty in the CubeSat
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#sensors-and-actuators" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Sensors and Actuators
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electrical-characteristics" class="md-nav__link">
+  <a href="#communication-method" class="md-nav__link">
     <span class="md-ellipsis">
-      Electrical Characteristics
+      Communication Method
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#eps-board-command-protocol-guide" class="md-nav__link">
+  <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      EPS Board Command Protocol – Guide
+      Architecture Diagram
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-pinout-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Pinout Diagram
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#communication-frame-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Communication Frame Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Commands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tips
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -586,332 +610,36 @@
 
 
 
-<h1 id="electrical-power-subsystem">Electrical Power Subsystem</h1>
-<h2 id="what-is-this">What is This?</h2>
-<p>This <strong>EPS (Electrical Power System)</strong> board is designed to manage solar power for a system. It connects <strong>solar panels</strong>, <strong>sensors</strong>, a <strong>battery</strong>, and <strong>output channels</strong> – all monitored and controlled using a simple communication protocol based on <strong>KISS (Keep It Simple, Stupid)</strong> Protocol.</p>
-<h2 id="pinout-diagram">Pinout Diagram</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../eps-diagram.svg" data-desc-position="bottom"><img alt="Block Diagram" src="../eps-diagram.svg"></a></p>
-<h2 id="features">Features</h2>
+<h1 id="electrical-power-system-eps">Electrical Power System (EPS)</h1>
+<h2 id="overview">Overview</h2>
+<p>The Electrical Power System (EPS) is a critical infrastructure component that manages the generation, storage, and distribution of power to all other satellite subsystems. In TUSat, the EPS relies on a pre-programmed PC104 module.</p>
+<h2 id="duty-in-the-cubesat">Duty in the CubeSat</h2>
 <ul>
-<li>6 Solar Cell input</li>
-<li>2 channels power output (3 Outputs per channel)</li>
-<li>EMI Protection</li>
-<li>CAN, UART Comunication protocol</li>
-<li>PC104 form factor compatible</li>
-<li>Heater with automatic control (optional)</li>
-<li>1S2P Lithium-ion cell</li>
+<li><strong>Power Generation</strong>: Interfaces with solar panels to harvest solar energy.</li>
+<li><strong>Power Storage</strong>: Manages battery charging and discharging to ensure continuous power during eclipse phases.</li>
+<li><strong>Power Distribution</strong>: Provides regulated voltage rails (e.g., 3.3V, 5V) to the PC104 bus for the OBC, ADCS, and Payload to consume.</li>
+<li><strong>Protection &amp; Monitoring</strong>: Safeguards against over-current and over-voltage scenarios, while providing telemetry (like temperature and voltage levels) back to the OBC.</li>
 </ul>
-<h2 id="electrical-characteristics">Electrical Characteristics</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Description</th>
-<th style="text-align: center;">Conditions</th>
-<th style="text-align: center;">Min</th>
-<th style="text-align: center;">Typical</th>
-<th style="text-align: center;">Max</th>
-<th style="text-align: center;">Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">MPPT Input</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">Input Voltage</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">4.8</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">V</td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Voltage</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">4.1</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">V</td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Power</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">W</td>
-</tr>
-<tr>
-<td style="text-align: center;">Total Energy</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Wh</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Battery Pack</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Voltage</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3.6</td>
-<td style="text-align: center;">4.2</td>
-<td style="text-align: center;">V</td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Power</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">W</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">5V Output Power (per channel)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Voltage</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">5.0</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">V</td>
-</tr>
-<tr>
-<td style="text-align: center;">Output Power</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">W</td>
-</tr>
-<tr>
-<td style="text-align: center;">Operating Temperature</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-20</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">+60</td>
-<td style="text-align: center;">⁰C</td>
-</tr>
-<tr>
-<td style="text-align: center;">Storage Temperature</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-20</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">+60</td>
-<td style="text-align: center;">⁰C</td>
-</tr>
-</tbody>
-</table>
-<!-- ![alt text](image.png) -->
-
-<!-- ## NB-EPS100 Specification
-## Battery Cell Ratings
-- Norminal voltage 3.6V
-- Allowable maxx charging voltage 4.2V
-## System protection ratings -->
-
-<!-- - 20W per converter per 3 channel
-- 2 converter (input at mppt)
-- 6 out / 6 in
-- 2p 18650
-- 4.1 x 3080 x 2 = 25.256Wh
-- Max Charge 4.1V
-- Over Voltage 4.2
-- Under Voltage 3.05
-- ~~Automatic balance~~
-- Heater (optional) -->
-
-<h2 id="eps-board-command-protocol-guide">EPS Board Command Protocol – Guide</h2>
-<p>You send commands and receive data using specific formats (frames), and these commands let you:</p>
+<h2 id="sensors-and-actuators">Sensors and Actuators</h2>
+<p>Because the module is pre-programmed, internal component details are abstracted. However, it exposes a specific sensor interface:
+- <strong>Temperature &amp; Health Monitoring</strong>: The EPS can be queried by the OBC to retrieve critical health telemetry, such as current temperature, battery charge level, and rail voltages.</p>
+<h2 id="communication-method">Communication Method</h2>
 <ul>
-<li>Read voltages and currents from solar panels and battery</li>
-<li>Monitor output channels</li>
-<li>Turn outputs ON or OFF</li>
-<li>Measure battery temperature</li>
+<li><strong>Interface/Protocol</strong>: UART (EPS TX, EPS RX). The OBC sends query commands via UART over the PC104 bus, and the EPS responds with the requested telemetry data.</li>
 </ul>
-<hr>
-<h2 id="system-overview">System Overview</h2>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Solar Panels</strong></td>
-<td>6 panels, each monitored with a <strong>INA226</strong> sensor (measures voltage &amp; current)</td>
-</tr>
-<tr>
-<td><strong>MPPT Charger</strong></td>
-<td>Takes solar power and charges the battery efficiently</td>
-</tr>
-<tr>
-<td><strong>Battery</strong></td>
-<td>Charging/discharging current measured by <strong>INA226</strong> sensors</td>
-</tr>
-<tr>
-<td><strong>Output Channels</strong></td>
-<td>6 output channels with safety protections (over-voltage, over-current, short-circuit)</td>
-</tr>
-<tr>
-<td><strong>Protocol Used</strong></td>
-<td>Based on <strong>KISS protocol</strong> with Start/End flags and command bytes</td>
-</tr>
-<tr>
-<td><strong>Battery Temp Sensors</strong></td>
-<td>Monitors battery temperature</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="communication-frame-format">Communication Frame Format</h2>
-<p>Every command you send follows this pattern:</p>
-<pre><code>[FSTART] [CMD] [PARAM] [FEND]
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>FSTART</strong></td>
-<td>Frame Start Flag</td>
-<td><code>0xC0 0x00</code></td>
-</tr>
-<tr>
-<td><strong>CMD</strong></td>
-<td>Command (What you want to do)</td>
-<td>See command table below</td>
-</tr>
-<tr>
-<td><strong>PARAM</strong></td>
-<td>Extra info (like channel number or state)</td>
-<td>Depends on command</td>
-</tr>
-<tr>
-<td><strong>FEND</strong></td>
-<td>Frame End Flag</td>
-<td><code>0xC0</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="commands-summary">Commands Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Command Name</th>
-<th>CMD Value</th>
-<th>PARAM</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>EPS_CMD_NONE</code></td>
-<td><code>0x00</code></td>
-<td>-</td>
-<td>Do nothing (reserved)</td>
-</tr>
-<tr>
-<td><code>EPS_GET_INA226</code></td>
-<td><code>0x01</code></td>
-<td>Channel (0–7)</td>
-<td>Read voltage/current from INA226 sensor (Solar or Battery)</td>
-</tr>
-<tr>
-<td><code>EPS_GET_ADM1177</code></td>
-<td><code>0x02</code></td>
-<td>Channel (0–5)</td>
-<td>Read voltage/current from output channel</td>
-</tr>
-<tr>
-<td><code>EPS_GET_OUTPUT</code></td>
-<td><code>0x03</code></td>
-<td>Channel (0–5)</td>
-<td>Get ON/OFF state of output channel</td>
-</tr>
-<tr>
-<td><code>EPS_GET_TEMP_BAT</code></td>
-<td><code>0x04</code></td>
-<td>Channel (0-1)</td>
-<td>Read battery temperature sensors</td>
-</tr>
-<tr>
-<td><code>EPS_SET_OUTPUT</code></td>
-<td><code>0x05</code></td>
-<td>Channel, State (0=OFF, 1=ON)</td>
-<td>Turn output channel ON or OFF</td>
-</tr>
-<tr>
-<td><code>EPS_SENSOR_INIT</code></td>
-<td><code>0xFE</code></td>
-<td>-</td>
-<td>Re-initialize all sensors</td>
-</tr>
-<tr>
-<td><code>EPS_GET_PARAM</code></td>
-<td><code>0xFF</code></td>
-<td>-</td>
-<td>Get configuration parameters</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="example-commands">Example Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Full Command Frame</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Read Solar Panel CH1 (INA226)</strong></td>
-<td><code>C0 00 01 00 C0</code></td>
-</tr>
-<tr>
-<td><strong>Turn ON Output Channel 2</strong></td>
-<td><code>C0 00 05 02 01 C0</code></td>
-</tr>
-<tr>
-<td><strong>Read Battery Temp</strong></td>
-<td><code>C0 00 04 00 C0</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="tips">Tips</h2>
-<ul>
-<li>All commands <strong>must start with <code>0xC0 0x00</code></strong> and end with <strong><code>0xC0</code></strong></li>
-<li>Always double-check <strong>channel numbers</strong> when sending commands</li>
-<li>You can use a <strong>serial terminal</strong> or script to send frames</li>
-</ul>
+<h2 id="architecture-diagram">Architecture Diagram</h2>
+<pre class="mermaid"><code>flowchart TD
+    EPS[Pre-programmed EPS Module]
+
+    Solar[Solar Panels] --&gt;|Raw Power| EPS
+    Battery[Battery Pack] &lt;--&gt;|Charge/Discharge| EPS
+
+    PC104((PC104 Bus))
+
+    EPS --&gt;|Regulated Power Rails| PC104
+    EPS &lt;--&gt;|UART Telemetry| PC104</code></pre>
+<h3 id="detailed-pinout-diagram">Detailed Pinout Diagram</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../diagram/TUSat%20Block%20Diagram.drawio-3.svg" data-desc-position="bottom"><img alt="EPS Diagram" src="../../diagram/TUSat%20Block%20Diagram.drawio-3.svg"></a></p>
 
 
 
