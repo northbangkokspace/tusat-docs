@@ -1,19 +1,19 @@
 #include <Wire.h>
 // Override weak default SDA pin mapping with internal pull-up
-const PinMap PinMap_I2C_SDA[] = {
-  { PB_9, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C1) },
-  { NC, NP, 0 }
-};
+// const PinMap PinMap_I2C_SDA[] = {
+//   { PF_0, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C2) },
+//   { NC, NP, 0 }
+// };
 
-// Override weak default SCL pin mapping with internal pull-up
-const PinMap PinMap_I2C_SCL[] = {
-  { PB_8, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C1) },
-  { NC, NP, 0 }
-};
+// // Override weak default SCL pin mapping with internal pull-up
+// const PinMap PinMap_I2C_SCL[] = {
+//   { PF_1, I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C2) },
+//   { NC, NP, 0 }
+// };
 
 void setup() {
-  Wire.setSCL(PB8);
-  Wire.setSDA(PB9);
+  Wire.setSCL(PF1);
+  Wire.setSDA(PF0);
   Wire.begin();
   Serial.setTx(PD8);
   Serial.setRx(PD9);
