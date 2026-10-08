@@ -8,6 +8,12 @@ SX1278 radio = new Module(PB6, PA10, PC7, -1, RADIO_SPI);
 
 #define LED_RX PB4
 
+volatile bool receivedFlag = false;
+
+void setFlag(void) {
+  receivedFlag = true;
+}
+
 void setup() {
   Serial.setTx(PA2);
   Serial.setRx(PA3);
@@ -45,8 +51,18 @@ void setup() {
     Serial.println(state);
     while (true) { delay(10); }
   }
-  radio.startReceive(2000);
-  delay(1000);
+
+  // Bind hardware transceiver event to ISR flag
+  radio.setDio0Action(setFlag, RISING);
+
+  // Trigger background reception
+  int state_rx = radio.startReceive();
+  if (state_rx == RADIOLIB_ERR_NONE) {
+    Serial.println(F("[SYSTEM] RF Interrupt enabled. Listening..."));
+  } else {
+    Serial.print(F("[ERROR] Failed to start receive. Code: "));
+    Serial.println(state_rx);
+  }
 }
 
 
@@ -100,60 +116,56 @@ void loop() {
 
 #elif defined(RECEIVE)
 void loop() {
-  // Serial.print(F("[SX1278] Waiting for incoming transmission ... "));
-
-  // you can receive data as an Arduino String
-  String str;
-  int state = radio.receive(str);
-
-  // you can also receive data as byte array
-  /*
-    byte byteArr[8];
-    int state = radio.receive(byteArr, 8);
-  */
-
-  if (state == RADIOLIB_ERR_NONE) {
-    // packet was successfully received
+  if (receivedFlag) {
+    receivedFlag = false; // Reset flag
     digitalWrite(LED_RX, LOW);
-    Serial.println(F("success!"));
 
-    // print the data of the packet
-    Serial.print(F("[SX1278] Data:\t\t\t"));
-    Serial.println(str);
+    String str;
+    int state = radio.readData(str);
 
-    // print the RSSI (Received Signal Strength Indicator)
-    // of the last received packet
-    Serial.print(F("[SX1278] RSSI:\t\t\t"));
-    Serial.print(radio.getRSSI());
-    Serial.println(F(" dBm"));
+    if (state == RADIOLIB_ERR_NONE) {
+      // packet was successfully received
+      Serial.println(F("success!"));
 
-    // print the SNR (Signal-to-Noise Ratio)
-    // of the last received packet
-    Serial.print(F("[SX1278] SNR:\t\t\t"));
-    Serial.print(radio.getSNR());
-    Serial.println(F(" dB"));
+      // print the data of the packet
+      Serial.print(F("[SX1278] Data:\t\t\t"));
+      Serial.println(str);
 
-    // print frequency error
-    // of the last received packet
-    Serial.print(F("[SX1278] Frequency error:\t"));
-    Serial.print(radio.getFrequencyError());
-    Serial.println(F(" Hz"));
+      // print the RSSI (Received Signal Strength Indicator)
+      // of the last received packet
+      Serial.print(F("[SX1278] RSSI:\t\t\t"));
+      Serial.print(radio.getRSSI());
+      Serial.println(F(" dBm"));
 
-  } else if (state == RADIOLIB_ERR_RX_TIMEOUT) {
-    // timeout occurred while waiting for a packet
-    Serial.println(F("timeout!"));
+      // print the SNR (Signal-to-Noise Ratio)
+      // of the last received packet
+      Serial.print(F("[SX1278] SNR:\t\t\t"));
+      Serial.print(radio.getSNR());
+      Serial.println(F(" dB"));
 
-  } else if (state == RADIOLIB_ERR_CRC_MISMATCH) {
-    // packet was received, but is malformed
-    Serial.println(F("CRC error!"));
+      // print frequency error
+      // of the last received packet
+      Serial.print(F("[SX1278] Frequency error:\t"));
+      Serial.print(radio.getFrequencyError());
+      Serial.println(F(" Hz"));
 
-  } else {
-    // some other error occurred
-    Serial.print(F("failed, code "));
-    Serial.println(state);
+    } else if (state == RADIOLIB_ERR_CRC_MISMATCH) {
+      // packet was received, but is malformed
+      Serial.println(F("CRC error!"));
+
+    } else {
+      // some other error occurred
+      Serial.print(F("failed, code "));
+      Serial.println(state);
+    }
+    
+    delay(50);
+    digitalWrite(LED_RX, HIGH);
+
+    // Reactivate non-blocking hardware receiver state
+    radio.startReceive();
+    receivedFlag = false;
   }
-  delay(10);
-  digitalWrite(LED_RX, HIGH);
 }
 
 #else
