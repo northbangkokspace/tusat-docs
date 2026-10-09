@@ -16,6 +16,48 @@ Because the module is pre-programmed, internal component details are abstracted.
 ## Communication Method
 - **Interface/Protocol**: UART (EPS TX, EPS RX). The OBC sends query commands via UART over the PC104 bus, and the EPS responds with the requested telemetry data.
 
+## Protocol Description
+
+| Field      | Description                               | Value                   |
+| ---------- | ----------------------------------------- | ----------------------- |
+| **FSTART** | Frame Start Flag                          | `0xC0 0x00`             |
+| **CMD**    | Command (What you want to do)             | See command table below |
+| **PARAM**  | Extra info (like channel number or state) | Depends on command      |
+| **FEND**   | Frame End Flag                            | `0xC0`                  |
+
+---
+
+### Commands Summary
+
+| Command Name       | CMD Value | PARAM                        | Description                                                |
+| ------------------ | --------- | ---------------------------- | ---------------------------------------------------------- |
+| `EPS_CMD_NONE`     | `0x00`    | -                            | Do nothing (reserved)                                      |
+| `EPS_GET_INA226`   | `0x01`    | Channel (0–7)                | Read voltage/current from INA226 sensor (Solar or Battery) |
+| `EPS_GET_ADM1177`  | `0x02`    | Channel (0–5)                | Read voltage/current from output channel                   |
+| `EPS_GET_OUTPUT`   | `0x03`    | Channel (0–5)                | Get ON/OFF state of output channel                         |
+| `EPS_GET_TEMP_BAT` | `0x04`    | Channel (0-1)                | Read battery temperature sensors                           |
+| `EPS_SET_OUTPUT`   | `0x05`    | Channel, State (0=OFF, 1=ON) | Turn output channel ON or OFF                              |
+| `EPS_SENSOR_INIT`  | `0xFE`    | -                            | Re-initialize all sensors                                  |
+| `EPS_GET_PARAM`    | `0xFF`    | -                            | Get configuration parameters                               |
+
+---
+
+### Example Commands
+
+| Action                            | Full Command Frame  |
+| --------------------------------- | ------------------- |
+| **Read Solar Panel CH1 (INA226)** | `C0 00 01 00 C0`    |
+| **Turn ON Output Channel 2**      | `C0 00 05 02 01 C0` |
+| **Read Battery Temp**             | `C0 00 04 00 C0`    |
+
+---
+
+### Tips
+
+* All commands **must start with `0xC0 0x00`** and end with **`0xC0`**
+* Always double-check **channel numbers** when sending commands
+* You can use a **serial terminal** or script to send frames
+
 ## Architecture Diagram
 
 ```mermaid
