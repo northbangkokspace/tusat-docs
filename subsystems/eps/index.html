@@ -345,6 +345,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#protocol-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       Architecture Diagram
@@ -571,6 +613,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#protocol-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       Architecture Diagram
@@ -626,6 +710,131 @@
 <h2 id="communication-method">Communication Method</h2>
 <ul>
 <li><strong>Interface/Protocol</strong>: UART (EPS TX, EPS RX). The OBC sends query commands via UART over the PC104 bus, and the EPS responds with the requested telemetry data.</li>
+</ul>
+<h2 id="protocol-description">Protocol Description</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FSTART</strong></td>
+<td>Frame Start Flag</td>
+<td><code>0xC0 0x00</code></td>
+</tr>
+<tr>
+<td><strong>CMD</strong></td>
+<td>Command (What you want to do)</td>
+<td>See command table below</td>
+</tr>
+<tr>
+<td><strong>PARAM</strong></td>
+<td>Extra info (like channel number or state)</td>
+<td>Depends on command</td>
+</tr>
+<tr>
+<td><strong>FEND</strong></td>
+<td>Frame End Flag</td>
+<td><code>0xC0</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="commands-summary">Commands Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Command Name</th>
+<th>CMD Value</th>
+<th>PARAM</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPS_CMD_NONE</code></td>
+<td><code>0x00</code></td>
+<td>-</td>
+<td>Do nothing (reserved)</td>
+</tr>
+<tr>
+<td><code>EPS_GET_INA226</code></td>
+<td><code>0x01</code></td>
+<td>Channel (0–7)</td>
+<td>Read voltage/current from INA226 sensor (Solar or Battery)</td>
+</tr>
+<tr>
+<td><code>EPS_GET_ADM1177</code></td>
+<td><code>0x02</code></td>
+<td>Channel (0–5)</td>
+<td>Read voltage/current from output channel</td>
+</tr>
+<tr>
+<td><code>EPS_GET_OUTPUT</code></td>
+<td><code>0x03</code></td>
+<td>Channel (0–5)</td>
+<td>Get ON/OFF state of output channel</td>
+</tr>
+<tr>
+<td><code>EPS_GET_TEMP_BAT</code></td>
+<td><code>0x04</code></td>
+<td>Channel (0-1)</td>
+<td>Read battery temperature sensors</td>
+</tr>
+<tr>
+<td><code>EPS_SET_OUTPUT</code></td>
+<td><code>0x05</code></td>
+<td>Channel, State (0=OFF, 1=ON)</td>
+<td>Turn output channel ON or OFF</td>
+</tr>
+<tr>
+<td><code>EPS_SENSOR_INIT</code></td>
+<td><code>0xFE</code></td>
+<td>-</td>
+<td>Re-initialize all sensors</td>
+</tr>
+<tr>
+<td><code>EPS_GET_PARAM</code></td>
+<td><code>0xFF</code></td>
+<td>-</td>
+<td>Get configuration parameters</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="example-commands">Example Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Full Command Frame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Read Solar Panel CH1 (INA226)</strong></td>
+<td><code>C0 00 01 00 C0</code></td>
+</tr>
+<tr>
+<td><strong>Turn ON Output Channel 2</strong></td>
+<td><code>C0 00 05 02 01 C0</code></td>
+</tr>
+<tr>
+<td><strong>Read Battery Temp</strong></td>
+<td><code>C0 00 04 00 C0</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="tips">Tips</h3>
+<ul>
+<li>All commands <strong>must start with <code>0xC0 0x00</code></strong> and end with <strong><code>0xC0</code></strong></li>
+<li>Always double-check <strong>channel numbers</strong> when sending commands</li>
+<li>You can use a <strong>serial terminal</strong> or script to send frames</li>
 </ul>
 <h2 id="architecture-diagram">Architecture Diagram</h2>
 <pre class="mermaid"><code>flowchart TD
